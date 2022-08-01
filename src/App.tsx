@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { FC } from 'react';
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import DriverResults from './components/DriverResults';
+import Overall from './components/Overall';
+import RaceResults from './components/RaceResults';
 
-function App() {
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">      
+        <Routes>
+          <Route path="/" element={<Overall />} />
+          <Route path="driverresults/:id" element={<DriverResults />} />
+          <Route path="raceresults/:round" element={<RaceResults />} />
+        </Routes>
     </div>
   );
 }
