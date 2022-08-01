@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from '../App';
-import { BrowserRouter, MemoryRouter, Route, Router, Routes } from 'react-router-dom';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 
 describe('<App/>', () => {
 
@@ -19,7 +19,7 @@ describe('<App/>', () => {
   test('should test route to driver results', () => {
     render(
       <MemoryRouter initialEntries={["/driverresults/:id"]}>
-        <App/>
+        <App />
       </MemoryRouter>
     );
 
@@ -30,7 +30,7 @@ describe('<App/>', () => {
   test('should test route to race results', () => {
     render(
       <MemoryRouter initialEntries={["/raceresults/:round"]}>
-        <App/>
+        <App />
       </MemoryRouter>
     );
 
