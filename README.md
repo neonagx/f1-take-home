@@ -2,7 +2,7 @@ F1-Take Home
 
 ## Available Scripts
 
-Before Running the Project, run the command 'npm ci' to clean install node_modules
+Before Running the Project, run the command 'npm ci --force' to clean install node_modules
 
 ### `npm start`
 
