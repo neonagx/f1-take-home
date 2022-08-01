@@ -1,24 +1,25 @@
 import React from 'react';
 import { render, RenderResult } from '@testing-library/react';
 
-import DriverResults from '../src/components/DriverResults';
+import RaceResults from '../components/RaceResults';
 import { BrowserRouter } from 'react-router-dom';
+
 let documentBody: RenderResult;
 
 describe('<DriverResult/>', () => {
     beforeEach(() => {
-        documentBody = render(<DriverResults />, { wrapper: BrowserRouter });
+        documentBody = render(<RaceResults />, { wrapper: BrowserRouter });
     });
 
     test('shows Results', () => {
-        expect(documentBody.getByText('Results')).toBeInTheDocument();
-        expect(documentBody.getByText('Round')).toBeInTheDocument();
-    })
+        expect(documentBody.getByText('Driver Number')).toBeInTheDocument();
+        expect(documentBody.getByText('Average Speed')).toBeInTheDocument();
+    });
 
     test('test getDriver Result', async () => {
 
         const effect = jest.spyOn(React, 'useEffect').mockImplementation((getDriverResultsData) => getDriverResultsData());
-        render(<DriverResults />, { wrapper: BrowserRouter });
+        render(<RaceResults />, { wrapper: BrowserRouter });
 
         expect(effect).toHaveBeenCalledTimes(1);
     });
